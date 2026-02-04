@@ -1,147 +1,94 @@
-# Objetos Literais em JavaScript
+# EduTrack Pro - Gestão Acadêmica Senior
 
-Projeto educacional que demonstra o uso de objetos literais em JavaScript, abordando conceitos fundamentais como propriedades, métodos, desestruturação e spread operator.
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-## Sumario
+Uma solução moderna e elegante para gestão de notas acadêmicas, desenvolvida com foco em **Objetos Literais**, padrões de projeto avançados e experiência do usuário (UX) de alto nível.
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Conceitos Abordados](#conceitos-abordados)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Como Executar](#como-executar)
-- [Exemplo de Saida](#exemplo-de-saida)
-- [Tecnologias](#tecnologias)
-- [Autor](#autor)
-- [Licenca](#licenca)
+## 🚀 Visão Geral
 
-## Sobre o Projeto
+Este projeto nasceu como uma exploração educacional sobre a manipulação de objetos em JavaScript e evoluiu para uma aplicação web completa (Dashboard). Ele demonstra como utilizar a sintaxe de objetos literais de forma escalável, aplicando desestruturação, *spread operator* e métodos de instância para criar um fluxo de trabalho eficiente e profissional.
 
-Este projeto foi desenvolvido para exemplificar a criacao e manipulacao de objetos literais em JavaScript, utilizando um caso pratico de um objeto `aluno` que contem propriedades e metodos para gerenciamento de notas academicas.
+## ✨ Funcionalidades Principais
 
-O exemplo demonstra boas praticas de programacao em JavaScript moderno (ES6+), incluindo:
+- **Dashboard Interativo**: Interface moderna com glassmorphism e animações fluidas.
+- **Gestão de Alunos**: Adição dinâmica de alunos e notas via interface intuitiva.
+- **Cálculo em Tempo Real**: Médias aritméticas e status acadêmico (Aprovado/Recuperação) processados instantaneamente.
+- **Estatísticas Avançadas**: Painel de indicadores com média geral da turma e contagem de aprovados.
+- **Persistência Local**: Todos os dados são salvos no `localStorage` do navegador, garantindo que as informações não sejam perdidas ao recarregar a página.
+- **Arquitetura de Objetos**: Uso de *factory functions* para criação de objetos literais robustos e métodos encapulados.
 
-- Criacao de objetos com sintaxe literal
-- Definicao de metodos dentro de objetos
-- Uso do operador `this` para acesso ao contexto
-- Desestruturacao de objetos
-- Spread operator para manipulacao imutavel de arrays
+## 🛠️ Tecnologias Utilizadas
 
-## Conceitos Abordados
+- **Núcleo**: JavaScript (ES6+) aplicando os conceitos mais modernos.
+- **Bundler**: [Vite](https://vitejs.dev/) para um desenvolvimento ultra-rápido e build otimizado.
+- **Estilização**: CSS3 Custom Properties (Variáveis CSS) para um design system flexível.
+- **Tipografia**: Google Fonts (Inter) para máxima legibilidade.
+- **Ícones**: SVG inline para performance e escalabilidade visual.
 
-### Objetos Literais
+## 🏗️ Estrutura do Projeto
 
-Objetos literais sao estruturas de dados que agrupam propriedades (dados) e metodos (funcoes) relacionados em uma unica entidade. Sao definidos utilizando a notacao de chaves `{}`.
-
-```javascript
-const aluno = {
-    nome: "Maria Silva",
-    notas: [8.5, 9.0, 7.5, 8.0],
-    calcularMedia() {
-        const soma = this.notas.reduce((acc, nota) => acc + nota, 0);
-        return soma / this.notas.length;
-    }
-};
-```
-
-### Desestruturacao
-
-A desestruturacao permite extrair valores de objetos e atribui-los a variaveis de forma concisa.
-
-```javascript
-const { nome } = aluno;
-console.log(nome); // "Maria Silva"
-```
-
-### Spread Operator
-
-O spread operator (`...`) permite espalhar os elementos de um array, possibilitando a criacao de copias e adicao de novos elementos de forma imutavel.
-
-```javascript
-const notasAtualizadas = [...aluno.notas, 9.5];
-```
-
-## Estrutura do Projeto
-
-```
+```text
 js-object-literals-aluno/
 ├── src/
-│   └── objetos-literais.js
-├── README.md
-└── LICENSE
+│   ├── main.js             # Orquestrador da Interface e Eventos
+│   ├── student-manager.js  # Lógica de Negócios e Objetos Literais
+│   ├── style.css           # Design System e Estilização Premium
+│   └── student.js          # (Opcional) Módulos adicionais
+├── index.html              # Estrutura Semântica Base
+├── package.json            # Dependências e Scripts
+└── README.md               # Documentação Profissional
 ```
 
-## Como Executar
+## ⚙️ Instruções de Instalação e Uso
 
-### Pre-requisitos
+### Pré-requisitos
+- Node.js (v18 ou superior)
+- NPM ou Yarn
 
-- Node.js (versao 14 ou superior)
+### Passo a Passo
 
-### Execucao
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/matheussiqueira-dev/js-object-literals-aluno.git
+   ```
 
-1. Clone o repositorio:
+2. **Acesse o diretório:**
+   ```bash
+   cd js-object-literals-aluno
+   ```
 
-```bash
-git clone https://github.com/matheussiqueira-dev/js-object-literals-aluno.git
-```
+3. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-2. Acesse o diretorio do projeto:
+4. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
 
-```bash
-cd js-object-literals-aluno
-```
+5. **Para build de produção:**
+   ```bash
+   npm run build
+   ```
 
-3. Execute o arquivo principal:
+## 🏆 Boas Práticas Implementadas
 
-```bash
-node src/objetos-literais.js
-```
+- **Imutabilidade**: Uso de *spread operator* para atualização de dados sem mutação direta de estados complexos.
+- **Clean Code**: Funções com responsabilidade única e nomes semânticos.
+- **Acessibilidade**: Contraste adequado (WCAG), uso de fontes legíveis e estrutura HTML semântica.
+- **Mobile First**: Layout responsivo que se adapta perfeitamente a dispositivos móveis e desktops.
 
-## Exemplo de Saida
+## 🔮 Melhorias Futuras
 
-```
-=== OBJETO ALUNO ===
-{
-  nome: 'Maria Silva',
-  notas: [ 8.5, 9, 7.5, 8 ],
-  calcularMedia: [Function: calcularMedia]
-}
+- [ ] Exportação de boletins em PDF.
+- [ ] Gráficos de desempenho individual utilizando Chart.js.
+- [ ] Autenticação de professores/usuários.
+- [ ] Integração com API externa para armazenamento em nuvem.
 
-Media do aluno: 8.25
+---
 
-=== DESESTRUTURACAO ===
-Nome extraido via desestruturacao: Maria Silva
-Nome renomeado: Maria Silva
-Notas originais: [8.5, 9, 7.5, 8]
-
-=== SPREAD OPERATOR ===
-Notas originais: [8.5, 9, 7.5, 8]
-Nova nota adicionada: 9.5
-Notas atualizadas: [8.5, 9, 7.5, 8, 9.5]
-
-=== APOS ATUALIZACAO ===
-Notas do aluno: [8.5, 9, 7.5, 8, 9.5]
-Nova media: 8.50
-
-=== OBJETO EXPANDIDO COM SPREAD ===
-{
-  nome: 'Maria Silva',
-  notas: [ 8.5, 9, 7.5, 8, 9.5, 10 ],
-  curso: 'Engenharia de Software',
-  calcularMedia: [Function: calcularMedia]
-}
-Media atualizada: 8.75
-```
-
-## Tecnologias
-
-- JavaScript (ES6+)
-- Node.js
-
-## Autor
-
-**Matheus Siqueira**
-
-- GitHub: [@matheussiqueira-dev](https://github.com/matheussiqueira-dev)
-
-## Licenca
-
-Este projeto esta licenciado sob a licenca MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+**Autoria**: Matheus Siqueira  
+**Website**: [https://www.matheussiqueira.dev/](https://www.matheussiqueira.dev/)
